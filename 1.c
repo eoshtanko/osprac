@@ -21,6 +21,6 @@ int main()
   while(write(fd[1], byte, 1)>=0){
     count++;
   }
-  printf("Size of the pipe - %d bytes", count/1024);
+  printf("Size of the pipe - %d", count/1024);
   return 0;
 }
