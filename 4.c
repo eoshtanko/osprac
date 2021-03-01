@@ -18,13 +18,13 @@ int main()
 		exit(-1);
 	}
 
-	if ((shmid = shmget(key, 3000 * sizeof(char), 0666 | IPC_CREAT | IPC_EXCL)) < 0) {
+	if ((shmid = shmget(key, 2500 * sizeof(char), 0666 | IPC_CREAT | IPC_EXCL)) < 0) {
 		if (errno != EEXIST) {
 			printf("Can\'t create shared memory\n");
 			exit(-1);
 		}
 		else {
-			if ((shmid = shmget(key, 3000 * sizeof(char), 0)) < 0) {
+			if ((shmid = shmget(key, 2500 * sizeof(char), 0)) < 0) {
 				printf("Can\'t find shared memory\n");
 				exit(-1);
 			}
@@ -41,7 +41,7 @@ int main()
 	// Depending on the value of the flag,
 	// we either initialize the array or increment the corresponding counters.
 	//
-	for (int i = 0; i < 3000; i++) {
+	for (int i = 0; i < 2500; i++) {
 		printf("%c", array[i]);
 	}
 
