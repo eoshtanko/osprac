@@ -26,7 +26,7 @@ exit(-1);
 // The memory size is defined as the size of an array of three integer variables,
 // access rights 0666 - reading and writing are allowed for everyone.
 //
-if ((shmid = shmget(key, 3000*sizeof(char), 0666|IPC_CREAT|IPC_EXCL)) < 0) {
+if ((shmid = shmget(key, 2500*sizeof(char), 0666|IPC_CREAT|IPC_EXCL)) < 0) {
 //
 // In case of an error, try to determine: whether it arose due to the fact
 // that the shared memory segment already exists or for some other reason.
