@@ -40,7 +40,7 @@ exit(-1);
 // try to get its IPC descriptor and,
 // if successful, reset the Initialization flag.
 //
-if ((shmid = shmget(key, 3000*sizeof(char), 0)) < 0) {
+if ((shmid = shmget(key, 2500*sizeof(char), 0)) < 0) {
 printf("Can\'t find shared memory\n");
 exit(-1);
 }
