@@ -15,7 +15,7 @@ void* mythread(void* dummy)
 
 int main()
 {
-	pthread_t thid, mythid,third;
+	pthread_t thid, mythid, third;
 	int       result;
 	
 	
