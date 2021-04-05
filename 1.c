@@ -15,7 +15,7 @@ void* mythread(void* dummy)
 
 int main()
 {
-	pthread_t thid, mythid, third;
+	pthread_t thid, mythid, thirdThread;
 	int       result;
 	
 	
@@ -28,14 +28,14 @@ int main()
 
 	printf("Thread created, thid = %u\n", thid);
 
-	result = pthread_create(&third, (pthread_attr_t*)NULL, mythread, NULL);
+	result = pthread_create(&thirdThread, (pthread_attr_t*)NULL, mythread, NULL);
 
 	if (result != 0) {
 		printf("Error on thread create, return value = %d\n", result);
 		exit(-1);
 	}
 
-	printf("Thread created, thid = %u\n", third);
+	printf("Thread created, thid = %u\n", thirdThread);
 
 	mythid = pthread_self();
 
@@ -44,7 +44,7 @@ int main()
 	printf("Thread %u, Calculation result = %d\n", mythid, a);
 
 	pthread_join(thid, (void**)NULL);
-	pthread_join(third, (void**)NULL);
+	pthread_join(thirdThread, (void**)NULL);
 
 	return 0;
 }
