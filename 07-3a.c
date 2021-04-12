@@ -37,7 +37,7 @@ int main()
 	int     shmid;
 	int     semid;
 	int     new = 1;
-	char    pathname[] = "73a.c";
+	char    pathname[] = "07-3a.c";
 	key_t   key;
 	long    i;
 
