@@ -75,7 +75,7 @@ int main()
                 exit(-1);
             }
 
-            printf("Пара №%d, Предок передал сообщение потомку.\n\r", i + 1);
+            printf("Обмен №%d, Предок передал сообщение потомку.\n\r", i + 1);
 
             inc(semid, &buffer);
             dec(semid, &buffer);
@@ -104,7 +104,7 @@ int main()
                 return 0;
             }
 
-            printf("Пара №%d, Потомок прочитал %s\n\r", ++counter, resstring);
+            printf("Обмен №%d, Потомок прочитал %s\n\r", ++counter, resstring);
 
             if (write(parent[1], "Privet world!", 14) != 14) {
                 printf("Невозможно записать всю строку.\n");
