@@ -45,7 +45,7 @@ int main()
     if ((semid = semget(key, 1, 0666)) < 0) {
         printf("Семафор не найден.\n");
         if ((semid = semget(key, 1, 0666 | IPC_CREAT)) < 0) {
-            printf("Не возможно получить Semid\n");
+            printf("Невозможно получить Semid\n");
             exit(-1);
         }
         printf("Создание прошло успешно!\n");
