@@ -24,7 +24,7 @@ int main() {
         } info;
     } clientbuf;
 
-    struct sermsgbuf {
+    struct servermsgbuf {
         long mtype;
         struct {
             float message;
@@ -55,7 +55,7 @@ int main() {
         serverbuf.info.message = clientbuf.info.message*clientbuf.info.message;
         len = sizeof(serverbuf.info);
 
-        if (msgsnd(msqid, (struct sermsgbuf *) &serverbuf, len, 0) < 0) {
+        if (msgsnd(msqid, (struct servermsgbuf *) &serverbuf, len, 0) < 0) {
             msgctl(msqid, IPC_RMID, (struct msqid_ds *) NULL);
             exit(-1);
         }
